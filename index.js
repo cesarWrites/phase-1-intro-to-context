@@ -153,14 +153,14 @@ function allWagesFor (employee){
     return payable
 }
 
-function findEmployeeByFirstName(srcArray, firstName) {
-  return srcArray.find(function(rec){
+function findEmployeeByFirstName(empArray, firstName) {
+  return empArray.find(function(rec){
     return rec.firstName === firstName
   })
 }
 
 function calculatePayroll(arrayOfEmployeeRecords){
-    return arrayOfEmployeeRecords.reduce(function(memo, rec){
-        return memo + allWagesFor(rec)
+    return arrayOfEmployeeRecords.reduce(function(actualPay, rec){
+        return actualPay + allWagesFor(rec)
     }, 0)
 }
